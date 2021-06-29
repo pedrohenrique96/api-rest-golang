@@ -10,10 +10,16 @@ import (
 	"gorm.io/gorm"
 )
 
+const (
+	Host = "dataBaseGolang"
+	PORT = "25432"
+)
+
 var db *gorm.DB
 
 func StartDB() {
-	str := "host=dataBaseGolang port=25432 user=admin dbname=user sslmode=disable password=docker"
+
+	str := ("host= port=25432 user=postgres dbname=restgo sslmode=disable password=docker")
 
 	database, err := gorm.Open(postgres.Open(str), &gorm.Config{})
 
